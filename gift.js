@@ -6,6 +6,8 @@ window.addEventListener('scroll', () => {
     const gifSectionOffset = gifSection.offsetTop;
     const windowHeight = window.innerHeight;
     const gifElement = gifSection.querySelector('img');
+    const maxScaleFactor = 3; // Maximum scale factor
+
 
     const scaleFactor = 0.01; // scale factor
     const scale = 1 + (scrollPosition - gifSectionOffset) / (windowHeight * scaleFactor); // Adjust divisor for scaling speed
@@ -21,4 +23,6 @@ window.addEventListener('scroll', () => {
     } else {
         subpageSection.classList.remove('active');
     }
+
+
 });
