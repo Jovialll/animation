@@ -2,6 +2,15 @@
     height: 400px;
     /* Adjust as per your GIF's height */
     position: relative;
+    overflow: hidden;
+}
+
+.gif-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
 }
 
 .subpage-section {
