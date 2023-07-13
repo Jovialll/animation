@@ -22,7 +22,7 @@
     /* Position off-screen */
     left: 0;
     background-color: #f0f0f0;
-    transition: top 0.5s ease-in-out;
+    transition: top 1s ease-in-out;
 }
 
 .subpage-section.active {

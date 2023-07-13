@@ -14,5 +14,6 @@ window.addEventListener('scroll', () => {
 
     if (gifZoomed && scrollPosition > gifSectionOffset + windowHeight) {
         subpageSection.classList.add('active');
+
     }
 });
