@@ -1,21 +1,22 @@
 const gifSection = document.querySelector('.gif-section');
 const subpageSection = document.querySelector('.subpage-section');
-let gifZoomed = false;
 
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const gifSectionOffset = gifSection.offsetTop;
     const windowHeight = window.innerHeight;
+    const gifElement = gifSection.querySelector('img');
 
-    if (scrollPosition > gifSectionOffset && !gifZoomed) {
-        gifSection.querySelector('img').style.transform = 'scale(1.5)';
-        gifZoomed = true;
+    const scaleFactor = 0.2; // scale factor
+    const scale = 1 + (scrollPosition - gifSectionOffset) / (windowHeight * scaleFactor); // Adjust divisor for scaling speed
+
+    if (scrollPosition > gifSectionOffset) {
+        gifElement.style.transform = `scale(${scale})`;
     } else {
-        gifSection.querySelector('img').style.transform = 'scale(1)';
-        gifZoomed = false;
+        gifElement.style.transform = 'scale(1)';
     }
 
-    if (gifZoomed && scrollPosition > gifSectionOffset + windowHeight) {
+    if (scrollPosition > gifSectionOffset + windowHeight) {
         subpageSection.classList.add('active');
     } else {
         subpageSection.classList.remove('active');
