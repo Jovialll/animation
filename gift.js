@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
     const windowHeight = window.innerHeight;
     const gifElement = gifSection.querySelector('img');
 
-    const scaleFactor = 0.2; // scale factor
+    const scaleFactor = 0.01; // scale factor
     const scale = 1 + (scrollPosition - gifSectionOffset) / (windowHeight * scaleFactor); // Adjust divisor for scaling speed
 
     if (scrollPosition > gifSectionOffset) {
